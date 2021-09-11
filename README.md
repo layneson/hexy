@@ -1,6 +1,12 @@
 # hexy
 Who's going to remember `hexdump -ve '1/1 "%.2x"'`? Why would anyone want to live in a world where they have to remember that?
 
+## Usage
+```
+$ hexy tohex <myfile.bin >myfile.hex
+$ hexy fromhex <myfile.hex >myfile.bin
+```
+
 ## Building
 Requires `zig` (pre-built grab-and-go found [here](https://ziglang.org/download/)).
 
@@ -15,9 +21,3 @@ The `hexy` binary can be found in `zig-out/bin`.
 $ zig build install -Drelease-safe=true --prefix <install-prefix>
 ```
 The `hexy` binary can be found in `<install-prefix>/bin`.
-
-## Usage
-```
-$ hexy tohex <myfile.bin >myfile.hex
-$ hexy fromhex <myfile.hex >myfile.bin
-```
