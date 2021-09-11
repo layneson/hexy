@@ -10,6 +10,6 @@ The `hexy` binary can be found in `zig-out/bin`.
 
 ## Usage
 ```
-$ hexy tohex <input.bin >output.hex
-$ hexy fromhex <output.hex >input.bin
+$ hexy tohex <myfile.bin >myfile.hex
+$ hexy fromhex <myfile.hex >myfile.bin
 ```
