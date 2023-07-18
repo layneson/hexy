@@ -18,6 +18,6 @@ The `hexy` binary can be found in `zig-out/bin`.
 
 ### Release
 ```
-$ zig build install -Drelease-safe=true --prefix <install-prefix>
+$ zig build install --prefix <install-prefix> -Doptimize=ReleaseSafe
 ```
 The `hexy` binary can be found in `<install-prefix>/bin`.
