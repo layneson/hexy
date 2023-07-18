@@ -2,10 +2,11 @@ const std = @import("std");
 
 pub fn main() anyerror!u8 {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    var allocator = &gpa.allocator;
+    var allocator = gpa.allocator();
 
-    const args = (try std.process.argsAlloc(allocator))[1..];
-    defer allocator.free(args);
+    const raw_args = try std.process.argsAlloc(allocator);
+    defer std.process.argsFree(allocator, raw_args);
+    const args = raw_args[1..];
 
     if (args.len == 0 or
         std.mem.eql(u8, "--help", args[0]) or
